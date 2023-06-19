@@ -174,9 +174,9 @@
       }
     },
     "com.unity.render-pipelines.universal": {
-      "version": "file:C:\\Program Files\\Unity 2021.3.16f1\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\com.unity.render-pipelines.universal",
+      "version": "12.1.8",
       "depth": 0,
-      "source": "local",
+      "source": "builtin",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
         "com.unity.burst": "1.8.2",
