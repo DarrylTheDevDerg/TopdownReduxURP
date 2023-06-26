@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 3694403380294886649}
   - component: {fileID: 3694403380294886648}
   - component: {fileID: 3694403380294886642}
-  - component: {fileID: 2141447062}
-  - component: {fileID: 2141447066}
+  - component: {fileID: -1208104530812771224}
   m_Layer: 0
   m_Name: PlayableChara
   m_TagString: Player
@@ -138,6 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039d7a0f94fafb3428d7af2ccdb5a6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackStat: 3.5
+  SpeedStat: 1.05
+  SlashSpeed: 2.1
+  LuckStat: 0
+  RangeStat: 1.25
+  SlashSpeedLimit: 30
   health: 4
   armor: 0
   maxMana: 50
@@ -145,14 +150,8 @@ MonoBehaviour:
   moveSpeed: 9.25
   jumpForce: 30
   CanDoubleJump: 0
-  AttackStat: 3.5
-  SpeedStat: 1.05
-  SlashSpeed: 2.1
-  LuckStat: 0
-  RangeStat: 1.25
-  SlashSpeedLimit: 30
   childObject: {fileID: 3694403380294886650}
---- !u!114 &2141447062
+--- !u!114 &-1208104530812771224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,33 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3694403380294886650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f65a194a6d04c559f3e4f3a2ab77c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fc8e855f5e3d444cad8b5ebd4184cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToCreate: {fileID: 4131653703767367624, guid: 91867b42fc7e4174597688269f0e99f2, type: 3}
-  newPosition: {x: 0.7, y: 0}
-  relativeToThisObject: 1
---- !u!114 &2141447066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694403380294886650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ddb73e2f0dc401ebfb23c7b6e72fa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 2141447062}
-  useCustomActions: 0
-  customActions:
-    m_PersistentCalls:
-      m_Calls: []
-  happenOnlyOnce: 0
-  filterByTag: 0
-  filterTag: Player
-  keyToPress: 122
-  eventType: 0
-  frequency: 0.5
+  prefabToGenerate: {fileID: 4131653703767367624, guid: 91867b42fc7e4174597688269f0e99f2, type: 3}
