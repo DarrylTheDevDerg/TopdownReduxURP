@@ -2,53 +2,62 @@ using UnityEngine;
 
 public class PrefabGenerator : MonoBehaviour
 {
-    public GameObject prefabToGenerate;
+    public GameObject prefab;
+    public float delay = 1f;
+    private float rangeStat = 1.0f;
+    private float timer = 0f;
 
-    private float delayTime = 0.0f;
-    private float currentDelay = 0.0f;
-    private bool isButtonPressed = false;
-
-    private void Update()
+    private void Start()
     {
-        // Actualizar el tiempo de retraso actual
-        currentDelay -= Time.deltaTime;
-
-        // Verificar si el botón se ha presionado
-        if (Input.GetKeyDown(KeyCode.Z))
+        // Retrieve the RangeStat value from PlayerPrefs
+        if (PlayerPrefs.HasKey("Range Stat"))
         {
-            isButtonPressed = true;
-        }
-
-        // Verificar si el botón se ha soltado
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            isButtonPressed = false;
-        }
-
-        // Verificar si el botón está presionado y ha pasado suficiente tiempo de retraso
-        if (isButtonPressed && currentDelay <= 0)
-        {
-            // Generar el prefab
-            GeneratePrefab();
-
-            // Calcular el nuevo tiempo de retraso basado en slashSpeedStat
-            float slashSpeedStat = PlayerPrefs.GetFloat("Slash Speed Stat", 2.0f);
-            delayTime = 1 / slashSpeedStat;
-            currentDelay = delayTime;
+            rangeStat = PlayerPrefs.GetFloat("Range Stat");
         }
     }
 
-    private void GeneratePrefab()
+    private void Update()
     {
-        // Generar el prefab en la posición actual del objeto
-        GameObject generatedPrefab = Instantiate(prefabToGenerate, transform.position, Quaternion.identity);
+        // Increment the timer
+        timer += Time.deltaTime;
 
-        // Obtener el valor de rangeStat de las PlayerPrefs
-        float rangeStat = PlayerPrefs.GetFloat("Range Stat", 1.25f);
+        if (timer >= delay && Input.GetKeyDown(KeyCode.Z))
+        {
+            // Calculate the position of the prefab considering the RangeStat value
+            float offsetX = rangeStat * (transform.localScale.x > 0f ? 1f : -1f);
+            Vector3 spawnPosition = transform.position + new Vector3(offsetX, 0f, 0f);
 
-        // Escalar el prefab horizontalmente basado en rangeStat
-        Vector3 newScale = generatedPrefab.transform.localScale;
-        newScale.x *= rangeStat;
-        generatedPrefab.transform.localScale = newScale;
+            GameObject newPrefab = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+            // Get the parent object's scale
+            Vector3 parentScale = transform.localScale;
+
+            // Check if the parent object is flipped on the X axis
+            if (parentScale.x < 0f)
+            {
+                // Flip the scale of the generated prefab on the X axis
+                Vector3 newScale = newPrefab.transform.localScale;
+                newScale.x *= -1f;
+                newPrefab.transform.localScale = newScale;
+
+                // Get the sprite renderer of the prefab
+                SpriteRenderer spriteRenderer = newPrefab.GetComponent<SpriteRenderer>();
+
+                // Flip the sprite renderer's sprite
+                spriteRenderer.flipX = true;
+
+                // Get the child sprite renderer if present
+                SpriteRenderer childSpriteRenderer = newPrefab.GetComponentInChildren<SpriteRenderer>();
+
+                // Flip the child sprite renderer's sprite
+                if (childSpriteRenderer != null)
+                {
+                    childSpriteRenderer.flipX = true;
+                }
+            }
+
+            // Reset the timer
+            timer = 0f;
+        }
     }
 }

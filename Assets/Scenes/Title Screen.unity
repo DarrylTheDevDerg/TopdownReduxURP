@@ -2215,7 +2215,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: REDUX
+  m_Text: Adventure!
 --- !u!222 &1492507705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3538,7 +3538,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sidescroller
+  m_Text: A small
 --- !u!222 &1947847151
 CanvasRenderer:
   m_ObjectHideFlags: 0
