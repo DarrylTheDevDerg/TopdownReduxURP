@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4131653703767367624, guid: 91867b42fc7e4174597688269f0e99f2, type: 3}
   delay: 1
+  offset: {x: -1.7, y: 0, z: 0}
 --- !u!95 &-6679122955053782059
 Animator:
   serializedVersion: 5
@@ -200,4 +201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: -6679122955053782059}
-  triggerParameterName: isMoving
+  boolParameterName: MovingCheck
+  triggerParameterName: AttackTrigger
+  delay: 1

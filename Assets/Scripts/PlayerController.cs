@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float LuckStat = 0.0f;
     public float RangeStat = 1.25f;
 
-    public float SlashSpeedLimit = 30.0f;
+    public float SlashSpeedLimit = 0.15f;
 
     // Cosas generales
 
@@ -33,18 +33,31 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
 
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.X) && health > 0f)
+        if (PlayerPrefs.HasKey("Attack Stat on Run"))
         {
-            health -= 0.5f;
+            AttackStat = PlayerPrefs.GetFloat("Attack Stat on Run", 3.5f);
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && health < maxHealth)
+        if (PlayerPrefs.HasKey("Speed Stat on Run"))
         {
-            health += 0.5f;
+            SpeedStat = PlayerPrefs.GetFloat("Speed Stat on Run", 1.0f);
+            moveSpeed = moveSpeed * SpeedStat;
+        }
+
+        if (PlayerPrefs.HasKey("Slash Speed Stat on Run"))
+        {
+            SlashSpeed = PlayerPrefs.GetFloat("Slash Speed Stat on Run", 2.0f);
+        }
+
+        if (PlayerPrefs.HasKey("Luck Stat on Run"))
+        {
+            LuckStat = PlayerPrefs.GetFloat("Luck Stat on Run", 0.0f);
+        }
+
+        if (PlayerPrefs.HasKey("Range Stat on Run"))
+        {
+            RangeStat = PlayerPrefs.GetFloat("Range Stat on Run", 1.25f);
         }
     }
 
@@ -98,10 +111,6 @@ public class PlayerController : MonoBehaviour
         if (SlashSpeed > SlashSpeedLimit)
         {
             SlashSpeed = SlashSpeedLimit;
-        }
-        else if (SlashSpeed < 0.1f)
-        {
-            SlashSpeed = 0.1f;
         }
     }
 

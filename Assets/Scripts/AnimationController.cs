@@ -5,35 +5,46 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     public Animator animator;
-    public string triggerParameterName = "isMoving";
+    public string boolParameterName = "MovingCheck";
+    public string triggerParameterName = " ";
+    private float delay = 1f;
+    private float timer = 0f;
 
-    private bool isPressedA = false;
-    private bool isPressedD = false;
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Slash Speed Stat on Run"))
+        {
+            delay = PlayerPrefs.GetFloat("Slash Speed Stat on Run", 2.0f);
+        }
+    }
 
     private void Update()
     {
+        timer += Time.deltaTime;
         // Detectar si el botón A está siendo presionado
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+
+        if (timer >= delay && Input.GetKeyDown(KeyCode.Z))
         {
-            isPressedA = true;
             animator.SetTrigger(triggerParameterName);
+            animator.SetBool(boolParameterName, false);
+            timer = 0f;
         }
-        else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
+        else
         {
-            isPressedA = false;
             animator.ResetTrigger(triggerParameterName);
+            if (animator.GetBool(boolParameterName) == true)
+            {
+                animator.SetBool(boolParameterName, true);
+            }
         }
 
-        // Detectar si el botón D está siendo presionado
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if ((Input.GetKey(KeyCode.A) == false && Input.GetKey(KeyCode.LeftArrow) == false) && (Input.GetKey(KeyCode.D) == false && Input.GetKey(KeyCode.RightArrow) == false))
         {
-            isPressedD = true;
-            animator.SetTrigger(triggerParameterName);
+            animator.SetBool(boolParameterName, false);
         }
-        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
+        else
         {
-            isPressedD = false;
-            animator.ResetTrigger(triggerParameterName);
+            animator.SetBool(boolParameterName, true);
         }
-    }    
+    }   
 }

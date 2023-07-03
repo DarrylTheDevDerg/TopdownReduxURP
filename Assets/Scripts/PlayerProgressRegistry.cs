@@ -33,7 +33,11 @@ public class PlayerProgressRegistry : MonoBehaviour
     public void Start()
     {   
         // Configurar el estado inicial del botón según showPlayerStats
-        toggleStatsButton.GetComponentInChildren<Text>().text = showPlayerStats ? "Disable Stats" : "Enable Stats";
+        if(toggleStatsButton != null)
+        {
+            toggleStatsButton.GetComponentInChildren<Text>().text = showPlayerStats ? "Disable Stats" : "Enable Stats";
+        }
+        
 
         // Agregar un listener al botón para activar/desactivar los stats del jugador
         toggleStatsButton.onClick.AddListener(TogglePlayerStats);
