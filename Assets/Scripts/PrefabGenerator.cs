@@ -3,10 +3,12 @@ using UnityEngine;
 public class PrefabGenerator : MonoBehaviour
 {
     public GameObject prefab;
+    public GameObject anotherPrefab;
     public float delay = 1f;
     private float rangeStat = 1.0f;
     private float timer = 0f;
     public Vector3 offset;
+    public bool hasPwdSword = false;
 
     private void Start()
     {
@@ -54,6 +56,16 @@ public class PrefabGenerator : MonoBehaviour
 
                 // Get the child sprite renderer if present
                 SpriteRenderer childSpriteRenderer = newPrefab.GetComponentInChildren<SpriteRenderer>();
+            }
+
+            if (PlayerPrefs.HasKey("HasPwdSword"))
+            {
+                PlayerPrefs.GetInt("HasPwdSword", hasPwdSword ? 1 : 0);
+            }
+
+            if (hasPwdSword)
+            {
+                GameObject newAnotherPrefab = Instantiate(anotherPrefab, spawnPosition, Quaternion.identity);
             }
 
             // Reset the timer

@@ -15,6 +15,10 @@ GameObject:
   - component: {fileID: 2587119545424719614}
   - component: {fileID: 226031900895822657}
   - component: {fileID: -7925161877479986044}
+  - component: {fileID: -8841916567518168815}
+  - component: {fileID: 2044346509273008655}
+  - component: {fileID: 6422751817095593580}
+  - component: {fileID: -435053962355873643}
   m_Layer: 0
   m_Name: AttackHitboxPlaceholder
   m_TagString: Untagged
@@ -173,3 +177,59 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &-8841916567518168815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131653703767367624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5e830769763b146b385ccf31b8c037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4131653703767367624}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0.23787141, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0.007030964, b: 1, a: 0}
+--- !u!114 &2044346509273008655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131653703767367624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef1f628e7029a24bb9b17f75d3108c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6422751817095593580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131653703767367624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5683c55ce64a454f9b0d775ab446341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: HitTrigger
+  tagToCheck: Enemy
+--- !u!114 &-435053962355873643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131653703767367624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe0519ba6c94fb4091778963f15714a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: SlashSpeedMultiplier

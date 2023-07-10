@@ -6,8 +6,12 @@ public class ModifyHealthAttribute : MonoBehaviour
 {
 
 	public bool destroyWhenActivated = false;
-	public int healthChange = -1;
+	public float healthChange;
 
+	private void Start()
+    {
+        healthChange = PlayerPrefs.GetFloat("Attack Stat on Run", 3.5f);
+    }
 	//This will create a dialog window asking for which dialog to add
 	private void Reset()
 	{

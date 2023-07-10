@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     // Stats
     public float AttackStat = 3.5f;
     public float SpeedStat = 1.0f;
-    public float SlashSpeed = 2.0f;
+    public float SlashSpeed = 7.5f;
     public float LuckStat = 0.0f;
     public float RangeStat = 1.25f;
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public bool CanDoubleJump = false;
 
     private Rigidbody2D rb;
-    public GameObject childObject; // Objeto hijo cuyo SpriteRenderer se modificará
+    public GameObject childObject; // Objeto hijo cuyo SpriteRenderer se modificarï¿½
 
 
     void Start()
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
         if (PlayerPrefs.HasKey("Slash Speed Stat on Run"))
         {
-            SlashSpeed = PlayerPrefs.GetFloat("Slash Speed Stat on Run", 2.0f);
+            SlashSpeed = PlayerPrefs.GetFloat("Slash Speed Stat on Run", 7.5f);
         }
 
         if (PlayerPrefs.HasKey("Luck Stat on Run"))

@@ -10,12 +10,19 @@ public class PlayerProgressRegistry : MonoBehaviour
     public float attackStat = 3.5f;
     public float speedStat = 1.0f;
     public float rangeStat = 1.25f;
-    public float slashSpeedStat = 2.0f;
+    public float slashSpeedStat = 7.5f;
     public float luckStat = 0f;
 
     public bool easterEggSeen = false;
     public bool finishedGame = false;
     public bool showPlayerStats = false;
+
+    public bool hasBrimstone = false;
+    public bool hasTrisword = false;
+    public bool hasTrickword = false;
+    public bool hasJar = false;
+    public bool hasCharm = false;
+    public bool hasPwdSword = false;
 
     public const string HaveYouSeenHimKey = "HaveYouSeenHim?";
     public const string FinishedDemoKey = "FinishedDemo?";
@@ -28,6 +35,12 @@ public class PlayerProgressRegistry : MonoBehaviour
     public const string RangeStatKey = "Range Stat on Run";
     public const string SlashSpeedStatKey = "Slash Speed Stat on Run";
     public const string LuckStatKey = "Luck Stat on Run";
+    public const string HasBrimstoneKey = "HasBrimstone";
+    public const string HasTriswordKey = "HasTrisword";
+    public const string HasTrickwordKey = "HasTrickword";
+    public const string HasJarKey = "HasJar";
+    public const string HasCharmKey = "HasCharm";
+    public const string HasPwdSwordKey = "HasPwdSword";
     public Button toggleStatsButton;
 
     public void Start()
@@ -99,6 +112,36 @@ public class PlayerProgressRegistry : MonoBehaviour
         {
             coins = PlayerPrefs.GetInt(CollectedCoinsKey);
         }
+
+        if (PlayerPrefs.HasKey(HasBrimstoneKey))
+        {
+            finishedGame = PlayerPrefs.GetInt(HasBrimstoneKey) != 0;
+        }
+
+        if (PlayerPrefs.HasKey(HasCharmKey))
+        {
+            finishedGame = PlayerPrefs.GetInt(HasCharmKey) != 0;
+        }
+
+        if (PlayerPrefs.HasKey(HasJarKey))
+        {
+            finishedGame = PlayerPrefs.GetInt(HasJarKey) != 0;
+        }
+
+        if (PlayerPrefs.HasKey(HasPwdSwordKey))
+        {
+            finishedGame = PlayerPrefs.GetInt(HasPwdSwordKey) != 0;
+        }
+
+        if (PlayerPrefs.HasKey(HasTrickwordKey))
+        {
+            finishedGame = PlayerPrefs.GetInt(HasTrickwordKey) != 0;
+        }
+
+        if (PlayerPrefs.HasKey(HasTriswordKey))
+        {
+            finishedGame = PlayerPrefs.GetInt(HasTriswordKey) != 0;
+        }
     }
 
     public void LoadPlayerStatsData()
@@ -142,6 +185,12 @@ public class PlayerProgressRegistry : MonoBehaviour
         PlayerPrefs.SetInt(CurrentLevelKey, currentLevel);
         PlayerPrefs.SetInt(KeysOnHandKey, keys);
         PlayerPrefs.SetInt(CollectedCoinsKey, coins);
+        PlayerPrefs.SetInt(HasBrimstoneKey, hasBrimstone ? 1 : 0);
+        PlayerPrefs.SetInt(HasCharmKey, hasCharm ? 1 : 0);
+        PlayerPrefs.SetInt(HasJarKey, hasJar ? 1 : 0);
+        PlayerPrefs.SetInt(HasPwdSwordKey, hasPwdSword ? 1 : 0);
+        PlayerPrefs.SetInt(HasTriswordKey, hasTrisword ? 1 : 0);
+        PlayerPrefs.SetInt(HasTrickwordKey, hasTrickword ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -153,5 +202,30 @@ public class PlayerProgressRegistry : MonoBehaviour
         PlayerPrefs.SetFloat(SlashSpeedStatKey, slashSpeedStat);
         PlayerPrefs.SetFloat(LuckStatKey, luckStat);
         PlayerPrefs.Save();
+    }
+
+    public void NewGame()
+    {
+        currentLevel = 1;
+        keys = 0;
+        coins = 0;
+
+        attackStat = 3.5f;
+        speedStat = 1.0f;
+        rangeStat = 1.25f;
+        slashSpeedStat = 7.5f;
+        luckStat = 0f;
+
+        hasBrimstone = false;
+        hasTrisword = false;
+        hasTrickword = false;
+        hasJar = false;
+        hasCharm = false;
+        hasPwdSword = false;
+
+        SavePlayerProgress();
+        SavePlayerRunProgress();
+        SavePlayerStats();
+
     }
 }

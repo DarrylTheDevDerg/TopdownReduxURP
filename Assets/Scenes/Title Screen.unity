@@ -1780,7 +1780,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cd4ed36427b166044851ad5e56cb7d3d, type: 2}
+  - {fileID: 2100000, guid: f2c8eb8edc65f7049972ecbb45936655, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2783,6 +2783,12 @@ MonoBehaviour:
   easterEggSeen: 0
   finishedGame: 0
   showPlayerStats: 0
+  hasBrimstone: 0
+  hasTrisword: 0
+  hasTrickword: 0
+  hasJar: 0
+  hasCharm: 0
+  hasPwdSword: 0
   toggleStatsButton: {fileID: 1529293849}
 --- !u!1 &1760146309
 GameObject:
@@ -2928,6 +2934,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1743924928}
+        m_TargetAssemblyTypeName: PlayerProgressRegistry, Assembly-CSharp
+        m_MethodName: NewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1760146317}
         m_TargetAssemblyTypeName: SceneLoaderScript, Assembly-CSharp
         m_MethodName: LoadScene

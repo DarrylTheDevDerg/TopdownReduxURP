@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: -1208104530812771224}
   - component: {fileID: -6679122955053782059}
   - component: {fileID: 6441983476283592417}
+  - component: {fileID: 2141447073}
+  - component: {fileID: 6623121487207819794}
+  - component: {fileID: -4453606044243771357}
   m_Layer: 0
   m_Name: PlayableChara
   m_TagString: Player
@@ -166,8 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4131653703767367624, guid: 91867b42fc7e4174597688269f0e99f2, type: 3}
+  anotherPrefab: {fileID: 2270476232694278844, guid: 358624d8bd546f34d9fd7909e2891dde, type: 3}
   delay: 1
   offset: {x: -1.7, y: 0, z: 0}
+  hasPwdSword: 0
 --- !u!95 &-6679122955053782059
 Animator:
   serializedVersion: 5
@@ -203,4 +208,48 @@ MonoBehaviour:
   animator: {fileID: -6679122955053782059}
   boolParameterName: MovingCheck
   triggerParameterName: AttackTrigger
-  delay: 1
+--- !u!114 &2141447073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694403380294886650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe0519ba6c94fb4091778963f15714a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: slashSpeed
+--- !u!114 &6623121487207819794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694403380294886650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5683c55ce64a454f9b0d775ab446341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: EnemyContact
+  tagToCheck: Enemy
+--- !u!114 &-4453606044243771357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694403380294886650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5a51108e5139c4fb2871c9777532e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeTime: 5
+  animator: {fileID: -6679122955053782059}
+  HasBrimstone: 0
+  hasPwdSword: 0
+  hasTrisword: 0
+  laserPrefab: {fileID: 0}
