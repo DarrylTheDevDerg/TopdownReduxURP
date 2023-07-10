@@ -6,6 +6,42 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: 62e9cd169105a9e4aab9a4579545550d
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: a506d54d0e641d0439eaa0f957480114
+  - enabled: 1
+    path: Assets/Scenes/LVL1.unity
+    guid: a6b9a34a95148844cbf393f5e3b98926
+  - enabled: 1
+    path: Assets/Scenes/LVL2.unity
+    guid: c4526bc001b42ad4081833e533cbd24d
+  - enabled: 1
+    path: Assets/Scenes/LVL3.unity
+    guid: e1e7b967ca36378448b323f46fcb36d5
+  - enabled: 1
+    path: Assets/Scenes/LVL4.unity
+    guid: 4f719cbc3e029d445bbbfbc13258c7cf
+  - enabled: 1
+    path: Assets/Scenes/LVL5.unity
+    guid: f1e742b4a4dc8b34288f105838812f57
+  - enabled: 1
+    path: Assets/Scenes/StaticMenuEasterEgg.unity
+    guid: 2786bd4255657dd47845244bfe1069a8
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 8dfab536cc5115b43a306db4397e9e9f
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 30618216735bdb248bb0b3b1380aa373
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: d3d6f331a368de54d982973dd45bb1b6
+  - enabled: 1
+    path: Assets/Scenes/ErrorRoom.unity
+    guid: eb2e82fd5708b044e8301c5ef002fa3e
   m_configObjects: {}

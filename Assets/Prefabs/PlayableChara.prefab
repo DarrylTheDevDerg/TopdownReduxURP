@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: -6679122955053782059}
   - component: {fileID: 6441983476283592417}
   - component: {fileID: 2141447073}
-  - component: {fileID: 6623121487207819794}
   - component: {fileID: -4453606044243771357}
+  - component: {fileID: -4418394475963668407}
   m_Layer: 0
   m_Name: PlayableChara
   m_TagString: Player
@@ -148,7 +148,7 @@ MonoBehaviour:
   LuckStat: 0
   RangeStat: 1.25
   SlashSpeedLimit: 30
-  health: 4
+  health: 22
   armor: 0
   maxMana: 50
   currentMana: 50
@@ -221,20 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameterName: slashSpeed
---- !u!114 &6623121487207819794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694403380294886650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5683c55ce64a454f9b0d775ab446341, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerName: EnemyContact
-  tagToCheck: Enemy
 --- !u!114 &-4453606044243771357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,4 +238,22 @@ MonoBehaviour:
   HasBrimstone: 0
   hasPwdSword: 0
   hasTrisword: 0
-  laserPrefab: {fileID: 0}
+  delay: 0
+  laserPrefab: {fileID: 3030847722405478550, guid: 87942f5598ba9e3418fafc40dd27d4b3, type: 3}
+--- !u!114 &-4418394475963668407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694403380294886650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5e830769763b146b385ccf31b8c037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4131653703767367624, guid: 91867b42fc7e4174597688269f0e99f2, type: 3}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0.048508644, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0.0543108, b: 1, a: 0}

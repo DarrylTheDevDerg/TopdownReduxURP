@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    public float chargeTime = 2f;               // Tiempo de carga en segundos
+    public float chargeTime = 1f;               // Tiempo de carga en segundos
     public Animator animator;                   // Referencia al Animator del jugador
 
     private bool isCharging = false;            // Indica si se está realizando la carga
@@ -14,7 +14,19 @@ public class PlayerAction : MonoBehaviour
     public bool hasPwdSword = false;
     public bool hasTrisword = false;
 
+    public float delay;
+
     public GameObject laserPrefab;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Slash Speed on Run"))
+        {
+            delay = PlayerPrefs.GetFloat("Slash Speed on Run");
+        }
+
+        chargeTime = chargeTime + delay;
+    }
 
     private void Update()
     {

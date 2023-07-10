@@ -7,12 +7,12 @@ public class LevelManager : MonoBehaviour
 {
     private int currentLevel = 1;
 
-    private void Start()
+    private void GetLevelInt()
     {
         // Obtener el valor del PlayerPrefs "CurrentLevel"
-        if (PlayerPrefs.HasKey("CurrentLevel"))
+        if (PlayerPrefs.HasKey("Current Level"))
         {
-            currentLevel = PlayerPrefs.GetInt("CurrentLevel");
+            currentLevel = PlayerPrefs.GetInt("Current Level");
         }
 
         // Realizar acciones basadas en el número del nivel

@@ -2089,7 +2089,7 @@ MonoBehaviour:
   - {fileID: 1653284244647666495}
   - {fileID: 6770302384655820526}
   - {fileID: 1902312414627272566}
-  pc: {fileID: 0}
+  pc: {fileID: 3694403380294886642, guid: 45bba9a36bd19844d9a66c1736a50b83, type: 3}
   maxHeath: 12
   currentHealth: 4
 --- !u!1 &6891164051593748186
@@ -2172,7 +2172,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 0
+  m_Text: Level ?
 --- !u!114 &6891164051593748184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,6 +3261,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6738036078635732238}
   - component: {fileID: 2906139117084403519}
+  - component: {fileID: 8024552574968522471}
+  - component: {fileID: 3110437001745749549}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -3318,6 +3320,34 @@ MonoBehaviour:
   hasCharm: 0
   hasPwdSword: 0
   toggleStatsButton: {fileID: 0}
+--- !u!114 &8024552574968522471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8092863186479973057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c763da8b87ebd87449c259ad4530a239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefsKey: VisiblePlayerStatsForIsaacPlayers
+  objectToEnable: {fileID: 6703380961915921897}
+--- !u!114 &3110437001745749549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8092863186479973057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b22b97d4a459654dae57b7097b95e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScript: {fileID: 0}
+  methodName: LoadPlayerData
 --- !u!1 &8134623038218987645
 GameObject:
   m_ObjectHideFlags: 0

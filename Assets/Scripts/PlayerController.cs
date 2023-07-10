@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -120,5 +121,20 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
+    }
+
+    public void RecoverHealth(float recoverAmount)
+    {
+        health += recoverAmount;
     }
 }

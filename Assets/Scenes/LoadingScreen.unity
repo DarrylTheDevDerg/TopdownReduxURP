@@ -249,10 +249,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 596684042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f73fc4180685b4fa1a2ee496e54216, type: 3}
+  m_Script: {fileID: 11500000, guid: b8814f3b31a5261439c3081c1f0f2ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SampleScene
 --- !u!1 &1011672502
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,4 +563,10 @@ MonoBehaviour:
   easterEggSeen: 0
   finishedGame: 0
   showPlayerStats: 0
+  hasBrimstone: 0
+  hasTrisword: 0
+  hasTrickword: 0
+  hasJar: 0
+  hasCharm: 0
+  hasPwdSword: 0
   toggleStatsButton: {fileID: 0}

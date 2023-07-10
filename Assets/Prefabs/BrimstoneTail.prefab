@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1784044757313042223}
   - component: {fileID: 7257623268342854693}
   - component: {fileID: -1037485647682737263}
+  - component: {fileID: 1099994184546918301}
   m_Layer: 0
   m_Name: BrimstoneTail
   m_TagString: Untagged
@@ -124,3 +125,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef1f628e7029a24bb9b17f75d3108c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1099994184546918301
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237667206222004230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18309510b86007f468a12117d32306c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

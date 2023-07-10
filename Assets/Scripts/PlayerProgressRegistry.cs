@@ -10,7 +10,7 @@ public class PlayerProgressRegistry : MonoBehaviour
     public float attackStat = 3.5f;
     public float speedStat = 1.0f;
     public float rangeStat = 1.25f;
-    public float slashSpeedStat = 7.5f;
+    public float slashSpeedStat = 3.5f;
     public float luckStat = 0f;
 
     public bool easterEggSeen = false;
@@ -213,7 +213,7 @@ public class PlayerProgressRegistry : MonoBehaviour
         attackStat = 3.5f;
         speedStat = 1.0f;
         rangeStat = 1.25f;
-        slashSpeedStat = 7.5f;
+        slashSpeedStat = 3.5f;
         luckStat = 0f;
 
         hasBrimstone = false;
@@ -227,5 +227,11 @@ public class PlayerProgressRegistry : MonoBehaviour
         SavePlayerRunProgress();
         SavePlayerStats();
 
+    }
+
+    public void ChangeLevel(int newLevel)
+    {
+        currentLevel = newLevel;
+        SavePlayerRunProgress();
     }
 }
