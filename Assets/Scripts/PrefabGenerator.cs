@@ -72,4 +72,33 @@ public class PrefabGenerator : MonoBehaviour
             timer = 0f;
         }
     }
+
+    public void AttackOnDemand()
+    {
+        float offsetX = rangeStat * (transform.localScale.x > 0f ? 1f : -1f);
+        Vector3 spawnPosition = transform.position + new Vector3(offsetX, 0f, 0f);
+
+        GameObject newPrefab = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+        // Get the parent object's scale
+        bool isFlipped = transform.GetComponent<SpriteRenderer>().flipX;
+
+
+        // Check if the parent object is flipped on the X axis
+        if (isFlipped)
+        {
+            // Flip the scale of the generated prefab on the X axis
+            Vector3 newScale = newPrefab.transform.localScale;
+            newScale.x *= -1f;
+            newPrefab.transform.localScale = newScale;
+
+            newPrefab.transform.position += offset;
+
+            // Get the sprite renderer of the prefab
+            SpriteRenderer spriteRenderer = newPrefab.GetComponent<SpriteRenderer>();
+
+            // Get the child sprite renderer if present
+            SpriteRenderer childSpriteRenderer = newPrefab.GetComponentInChildren<SpriteRenderer>();
+        }
+    }
 }

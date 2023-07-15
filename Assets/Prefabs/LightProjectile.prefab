@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2270476232694278846}
   - component: {fileID: 2270476232694278847}
   - component: {fileID: 2270476232694278977}
+  - component: {fileID: -3455404116603543278}
   m_Layer: 0
   m_Name: LightProjectile
   m_TagString: Untagged
@@ -100,3 +101,23 @@ MonoBehaviour:
   initialSpeed: 2
   acceleration: 0.5
   screenLimit: 10
+--- !u!95 &-3455404116603543278
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270476232694278844}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69a87e1af5acc78458d6457b7b824cf1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

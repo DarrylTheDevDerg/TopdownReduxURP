@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 2044932326672290635}
   - component: {fileID: 2044932326672290634}
   - component: {fileID: 990856015314929671}
+  - component: {fileID: 6529108061079269578}
   m_Layer: 0
   m_Name: Animation Ref (Heart)
   m_TagString: Untagged
@@ -241,3 +242,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: 0
   deathEffect: {fileID: 0}
+--- !u!114 &6529108061079269578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044932326672290633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa447a8feec24c43b4b0400982ce7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClip: {fileID: 8300000, guid: 41b777178f77da14985823c1a83e34af, type: 3}

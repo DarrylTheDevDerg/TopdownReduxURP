@@ -156,6 +156,12 @@ MonoBehaviour:
   jumpForce: 30
   CanDoubleJump: 0
   childObject: {fileID: 3694403380294886650}
+  animator: {fileID: -6679122955053782059}
+  triggerName: EnemyContact
+  audioClips:
+  - {fileID: 8300000, guid: 019555ff483f2bc49ade045b313b1e0e, type: 3}
+  - {fileID: 8300000, guid: a0a12964b73524c41919173de4688e0d, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &-1208104530812771224
 MonoBehaviour:
   m_ObjectHideFlags: 0

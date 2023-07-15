@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,9 +18,8 @@ public class PlayerController : MonoBehaviour
 
     // Cosas generales
 
-    public float health = 6f;
+    public float health = 4f;
     public float armor = 0f;
-    private float maxHealth = 12f;
     public int maxMana = 50;
     public int currentMana = 50;
     public float moveSpeed = 5f;
@@ -29,8 +29,12 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     public GameObject childObject; // Objeto hijo cuyo SpriteRenderer se modificar�
+    public Animator animator;
+    public string triggerName;
+    public Animation hurtAnimation;
 
-
+    public AudioClip[] audioClips;
+    public AudioSource audioSource;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -60,6 +64,14 @@ public class PlayerController : MonoBehaviour
         {
             RangeStat = PlayerPrefs.GetFloat("Range Stat on Run", 1.25f);
         }
+
+        // Obtener o agregar el componente AudioSource al objeto
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
     }
 
     void Update()
@@ -92,12 +104,6 @@ public class PlayerController : MonoBehaviour
             currentMana += 1;
         }
 
-        // Limite duro de HP
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-
         // Limite duro de Velocidad
         if (SpeedStat > 12)
         {
@@ -115,17 +121,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void PlayAudioClip(int clipIndex)
+    {
+        // Verificar si el índice es válido
+        if (clipIndex >= 0 && clipIndex < audioClips.Length)
+        {
+            // Establecer el audio clip correspondiente al índice
+            audioSource.clip = audioClips[clipIndex];
+
+            // Reproducir el audio clip
+            audioSource.Play();
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
+            PlayAudioClip(0);
         }
     }
 
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
+        PlayAudioClip(1);
+        animator.SetTrigger(triggerName);
 
         if (health <= 0)
         {

@@ -2089,8 +2089,8 @@ MonoBehaviour:
   - {fileID: 1653284244647666495}
   - {fileID: 6770302384655820526}
   - {fileID: 1902312414627272566}
-  pc: {fileID: 3694403380294886642, guid: 45bba9a36bd19844d9a66c1736a50b83, type: 3}
-  maxHeath: 12
+  pc: {fileID: 0}
+  maxHealth: 4
   currentHealth: 4
 --- !u!1 &6891164051593748186
 GameObject:
@@ -3263,6 +3263,7 @@ GameObject:
   - component: {fileID: 2906139117084403519}
   - component: {fileID: 8024552574968522471}
   - component: {fileID: 3110437001745749549}
+  - component: {fileID: 4638501759111028786}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -3346,8 +3347,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b22b97d4a459654dae57b7097b95e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScript: {fileID: 0}
+  targetScript: {fileID: 2906139117084403519}
   methodName: LoadPlayerData
+--- !u!114 &4638501759111028786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8092863186479973057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b958606c51d5e794ea4e80b7c02f11a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 0}
+  useAudioSource: 1
+  audioSource: []
+  audioMixer: {fileID: 0}
 --- !u!1 &8134623038218987645
 GameObject:
   m_ObjectHideFlags: 0

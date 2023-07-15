@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 8361532179152398271}
   - component: {fileID: 8361532179152398268}
   - component: {fileID: 5245815751938067299}
-  - component: {fileID: -4587530512970919220}
   - component: {fileID: 942600346514368610}
+  - component: {fileID: -5700485970296263863}
+  - component: {fileID: 3309785541805387192}
   m_Layer: 0
   m_Name: Landchaser
   m_TagString: Enemy
@@ -143,7 +144,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.05}
@@ -209,7 +210,7 @@ MonoBehaviour:
   currentHealth: 10
   animator: {fileID: 8361532179152398213}
   animatorTrigger: HitTrigger
---- !u!114 &-4587530512970919220
+--- !u!114 &942600346514368610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,7 +219,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 8361532179152398217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810546aa5348745779a5772744036fd6, type: 3}
+  m_Script: {fileID: 11500000, guid: fc0bb1a6822c70742bd4100af5b83762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefabs:
+  - prefab: {fileID: 2044932326672290633, guid: 2fe9df8e96289344aa57db712d5b38de, type: 3}
+    probability: 0.635
+  spawnRadius: 1
+--- !u!114 &-5700485970296263863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361532179152398217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdab9334f9a2a4efe8c019b5d37595cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actions: []
@@ -226,18 +243,6 @@ MonoBehaviour:
   customActions:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -6679122955053782059, guid: 45bba9a36bd19844d9a66c1736a50b83, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: HitbyEnemy
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3694403380294886642, guid: 45bba9a36bd19844d9a66c1736a50b83, type: 3}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: TakeDamage
@@ -253,9 +258,7 @@ MonoBehaviour:
   happenOnlyOnce: 0
   filterByTag: 1
   filterTag: Player
-  frequency: 1
-  eventType: 0
---- !u!114 &942600346514368610
+--- !u!114 &3309785541805387192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,10 +267,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8361532179152398217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc0bb1a6822c70742bd4100af5b83762, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fa447a8feec24c43b4b0400982ce7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefabs:
-  - prefab: {fileID: 2044932326672290633, guid: 2fe9df8e96289344aa57db712d5b38de, type: 3}
-    probability: 1
-  spawnRadius: 1
+  soundClip: {fileID: 0}
